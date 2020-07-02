@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+}
+
+
+div.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.circle {
+  height: 50px;
+  width: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(10, 10, 10);
+  border: 1px solid rgba(22, 134, 217, 0.4);
+  border-radius: 50%;
+}
+
+div.btn-container {
+  padding: 0 100px;
+  margin-top: 150px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row-reverse;
+}
+
+button.next-reset-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+div.reports {
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  min-width: 500px;
+}
+
+div.rep pre{
+  display: block;
+}
+
+
+@-webkit-keyframes spinner {
+  from { -webkit-transform: rotateY(0deg);    }
+  to   { -webkit-transform: rotateY(-360deg); }
+}
+
+/* all other browsers */
+@keyframes spinner {
+  from {
+    -moz-transform: rotateY(0deg);
+    -ms-transform: rotateY(0deg);
+    transform: rotateY(0deg);
+  }
+  to {
+    -moz-transform: rotateY(-360deg);
+    -ms-transform: rotateY(-360deg);
+    transform: rotateY(-360deg);
+  }
+}
+
+
+#stage {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  transform: translateX(-50%);
+  display: grid;
+  grid-template: repeat(5, 20%) / 20% 60% 20%;
+  color: #4CAF50;
+  background: darkred; 
+  opacity: 0.8;
+  height: 200px; 
+  width: 200px;
+  display: none;
+}
+
+.display-grid {
+  display: grid;
+}
+
+#stage h1.winner {
+  text-align: center;
+  grid-area: 1 / 2 / 2 / 3;
+  color: white;
+  font-family: 'Black Ops One', cursive;
+}
+
+#stage p.name-of-winner {
+  text-align: center;
+  grid-area: 5 / 2 / 6 / 3;
+  color: white;
+  font-family: 'Black Ops One', cursive;
+}
+
+.grid-icon {
+  grid-area: 3 / 2 / 4 / 3;
+  font-size: 30px;
+}
+
+.spinner {
+  width: auto;
+  height: auto;
+  -webkit-animation-name: spinner;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-duration: 6s;
+
+  animation-name: spinner;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 6s;
+
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -ms-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+}
+
+.spinner:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
